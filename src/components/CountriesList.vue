@@ -1,9 +1,9 @@
 <template lang="html">
   <div>
-    <ul>
-      <list-item v-for="(country, index) in countries"
-      :country="country" :key="index"></list-item>
-    </ul>
+    <select v-on:change="handleSelect" v-model="selectedCountry">
+      <option disabled value="">Choose a Country :)</option>
+      <option v-for="country in countries" :value="country">{{ country.name }}</option>
+    </select>
   </div>
 </template>
 
@@ -23,7 +23,13 @@ export default {
 </style>
 
 
-<select id="countries-list" v-model="selectedCountry">
-  <list-item disabled value="">Choose a Country :)</list-item>
-  <list-item v-for="country in countries" :value="country">{{ country.name }}</list-item>
-</select>
+
+<!-- <ul>
+  <list-item v-for="(country, index) in countries"
+  :country="country" :key="index"></list-item>
+</ul>
+
+  <select id="countries-list" v-model="selectedCountry">
+    <option disabled value="">Choose a Country :)</option>
+    <option v-for="country in countries" :value="country">{{ country.name }}</option>
+  </select> -->

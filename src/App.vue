@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>Countrys in Planet Earth</h1>
-    <div class="the-good-stuff">
+    <div class="main-container">
       <countries-list :countries='countries'></countries-list>
-
+      <country-data :country="selectedCountry"></country-data>
     </div>
   </div>
 </template>
 
 <script>
 import CountriesList from './components/CountriesList.vue';
-
+import CountriesData from './components/CountriesData.vue';
 import { eventBus } from './main.js';
 
 export default {
@@ -33,14 +33,10 @@ export default {
   },
   components: {
     "countries-list": CountriesList,
-    // "country-detail": CountryDetail
+    "countries-data": CountriesData
   }
 }
 </script>
 
 <style>
-  .main-cpintainer {
-    display: flex;
-    justify-content: space-between;
-  }
 </style>
